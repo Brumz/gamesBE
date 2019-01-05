@@ -29,6 +29,11 @@ app.post("/games", (req, res) => {
         res.status(201).send(game)
     })
 })
+app.put("/games/:id", (req, res) => {
+    queries.updateGame(req.params.id, req.body).then(game => {
+        res.status(200).send(game[0])
+    })
+})
 
 
 

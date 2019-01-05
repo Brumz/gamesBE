@@ -4,10 +4,19 @@ module.exports = {
         return db("games")
     },
     listGameById(id) {
-        return db("games").where("id", id).first()
+        return db("games")
+            .where("id", id)
+            .first()
     },
     createNewGame(newGame) {
-        return db("games").insert(newGame).returning("*")
+        return db("games")
+            .insert(newGame)
+            .returning("*")
+    },
+    updateGame(id, newInfo) {
+        return db("games").where("id", id)
+            .update(newInfo)
+            .returning("*")
     }
 
 }
