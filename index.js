@@ -24,6 +24,11 @@ app.get("/games/:id", (req, res) => {
         res.json(game)
     })
 })
+app.post("/games", (req, res) => {
+    queries.createNewGame(req.body).then(game => {
+        res.status(201).send(game)
+    })
+})
 
 
 
