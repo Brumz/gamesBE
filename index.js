@@ -19,6 +19,11 @@ app.get("/games", (req, res) => {
         res.json(games)
     })
 })
+app.get("/games/:id", (req, res) => {
+    queries.listGameById(req.params.id).then(game => {
+        res.json(game)
+    })
+})
 
 
 
