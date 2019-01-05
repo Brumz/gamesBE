@@ -34,11 +34,11 @@ app.put("/games/:id", (req, res) => {
         res.status(200).send(game[0])
     })
 })
-
-
-
-
-
+app.delete("/games/:id", (req, res) => {
+    queries.deleteGameById(req.params.id).then(game => {
+        res.status(204).send("Game has been deleted")
+    })
+})
 
 
 

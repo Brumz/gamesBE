@@ -17,6 +17,9 @@ module.exports = {
         return db("games").where("id", id)
             .update(newInfo)
             .returning("*")
+    },
+    deleteGameById(id) {
+        return db("games").where("id", id).del()
     }
 
 }
